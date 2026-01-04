@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -8,6 +10,13 @@
 	--color-purple: var(--purple);
 	--color-yellow-light: var(--yellow-light);
 	--color-yellow-dark: var(--yellow-dark);
+
+	--font-title: "Baloo 2", sans-serif;
+	--font-content: "Roboto", sans-serif;
+
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-xl: 1280px;
 }
 
 @layer base {
@@ -28,8 +37,9 @@
 		margin: 0 auto;
 		padding-block: 0;
 		padding-inline: 0.5rem;
-		max-width: 1440px;
+		max-width: 1280px;
 		box-sizing: border-box;
+		font-family: var(--font-title);
 	}
 
 	button {
