@@ -4,7 +4,7 @@ import { ShoppingCart, User } from "lucide-react"
 
 function Header() {
 	return (
-		<div className="w-full border border-red-400 py-8 justify-between flex">
+		<div className="w-full  py-8 justify-between flex">
 			<img src={Logo} alt="Logo" className="w-20" />
 
 			<div className="flex gap-3">
