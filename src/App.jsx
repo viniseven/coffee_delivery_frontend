@@ -2,7 +2,7 @@ import Header from "./components/Header"
 
 function App() {
 	return (
-		<main className="w-7xl">
+		<main>
 			<Header />
 		</main>
 	)
