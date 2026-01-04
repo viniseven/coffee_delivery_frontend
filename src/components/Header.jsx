@@ -1,0 +1,23 @@
+import Logo from "../assets/Logo.svg"
+import { Button } from "./ui/button"
+import { ShoppingCart, User } from "lucide-react"
+
+function Header() {
+	return (
+		<div className="w-full border border-red-400 py-8 justify-between flex">
+			<img src={Logo} alt="Logo" className="w-20" />
+
+			<div className="flex gap-3">
+				<Button className="bg-purple-light">
+					<User className="text-purple fill-purple" />
+					<p className="text-purple">Marcus Vinícius</p>
+				</Button>
+				<Button className="bg-yellow-light">
+					<ShoppingCart className="text-yellow-dark fill-yellow-dark" />
+				</Button>
+			</div>
+		</div>
+	)
+}
+
+export default Header
