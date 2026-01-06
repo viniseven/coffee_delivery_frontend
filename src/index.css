@@ -8,11 +8,18 @@
 	--color-foreground: var(--foreground);
 	--color-purple-light: var(--purple-light);
 	--color-purple: var(--purple);
+	--color-purple-dark: var(--purple-dark);
 	--color-yellow-light: var(--yellow-light);
 	--color-yellow-dark: var(--yellow-dark);
+	--color-gray-light: var(--gray-light);
+
+	--color-base-card: var(--base-card);
+	--color-base-button: var(--base-button);
 
 	--font-title: "Baloo 2", sans-serif;
 	--font-content: "Roboto", sans-serif;
+
+	--font-size-h1-title: 
 
 	--breakpoint-sm: 640px;
 	--breakpoint-md: 768px;
@@ -22,16 +29,34 @@
 @layer base {
 	:root {
 		--background: #ffffff;
+		--base-card: #F3F2F2;
+		--base-button: #E6E5E5;
+
+		--gray-light: #706765;
 
 		--purple-light: #ebe5f9;
 		--purple: #8047f8;
+		--purple-dark: #4B2995;
 
 		--yellow-light: #f1e9c9;
 		--yellow-dark: #c47f17;
 		--foreground: #000000;
 	}
+		h1{
+			@apply text-5xl 
+		}
 
-	/* Reset básico para garantir que o fundo e o texto funcionem */
+		h2{
+			@apply text-3xl
+		}
+
+		h3{
+			@apply text-xl font-bold
+		}
+
+		h1,h2 {
+			@apply font-title font-extrabold
+		}
 	body {
 		@apply bg-background text-foreground antialiased;
 		margin: 0 auto;
