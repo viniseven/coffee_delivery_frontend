@@ -6,9 +6,7 @@ function ContainerTitle() {
 	return (
 		<div className="grid grid-col gap-2 xl:grid-cols-2 xl:mt-24">
 			<div className="flex flex-col gap-4">
-				<h1 className="text-5xl font-extrabold">
-					Encontre o café perfeito para qualquer hora do dia
-				</h1>
+				<h1>Encontre o café perfeito para qualquer hora do dia</h1>
 				<p className="text-xl font-light font-content">
 					Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
 					hora do dia.
