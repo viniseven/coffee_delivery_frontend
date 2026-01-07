@@ -4,7 +4,7 @@ import { Button } from "./ui/button"
 function AddCartControl() {
 	return (
 		<div className="flex flex-row gap-2">
-			<div className="flex items-center bg-base-button rounded-md">
+			<div className="bg-base-button flex items-center rounded-md">
 				<Button>
 					<Minus className="text-purple" />
 				</Button>

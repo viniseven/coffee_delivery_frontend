@@ -15,13 +15,12 @@
 
 	--color-base-card: var(--base-card);
 	--color-base-button: var(--base-button);
+	--color-base-text: var(--base-text);
 
 	--font-title: "Baloo 2", sans-serif;
 	--font-content: "Roboto", sans-serif;
 
-	--font-size-h1-title: 
-
-	--breakpoint-sm: 640px;
+	--font-size-h1-title: --breakpoint-sm: 640px;
 	--breakpoint-md: 768px;
 	--breakpoint-xl: 1280px;
 }
@@ -29,34 +28,36 @@
 @layer base {
 	:root {
 		--background: #ffffff;
-		--base-card: #F3F2F2;
-		--base-button: #E6E5E5;
+		--base-card: #f3f2f2;
+		--base-button: #e6e5e5;
+		--base-text: #574f4d;
 
 		--gray-light: #706765;
 
 		--purple-light: #ebe5f9;
 		--purple: #8047f8;
-		--purple-dark: #4B2995;
+		--purple-dark: #4b2995;
 
 		--yellow-light: #f1e9c9;
 		--yellow-dark: #c47f17;
 		--foreground: #000000;
 	}
-		h1{
-			@apply text-5xl 
-		}
+	h1 {
+		@apply text-5xl;
+	}
 
-		h2{
-			@apply text-3xl
-		}
+	h2 {
+		@apply text-3xl;
+	}
 
-		h3{
-			@apply text-xl font-bold
-		}
+	h3 {
+		@apply text-xl font-bold;
+	}
 
-		h1,h2 {
-			@apply font-title font-extrabold
-		}
+	h1,
+	h2 {
+		@apply font-title font-extrabold;
+	}
 	body {
 		@apply bg-background text-foreground antialiased;
 		margin: 0 auto;
