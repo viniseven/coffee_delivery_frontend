@@ -16,7 +16,7 @@
 	--color-base-card: var(--base-card);
 	--color-base-button: var(--base-button);
 	--color-base-text: var(--base-text);
-
+	--color-base-input: var(--base-input);
 	--font-title: "Baloo 2", sans-serif;
 	--font-content: "Roboto", sans-serif;
 
@@ -31,6 +31,7 @@
 		--base-card: #f3f2f2;
 		--base-button: #e6e5e5;
 		--base-text: #574f4d;
+		--base-input: #ededed;
 
 		--gray-light: #706765;
 
