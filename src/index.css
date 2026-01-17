@@ -11,6 +11,7 @@
 	--color-purple-dark: var(--purple-dark);
 	--color-yellow-light: var(--yellow-light);
 	--color-yellow-dark: var(--yellow-dark);
+	--color-yellow: var(--yellow);
 	--color-gray-light: var(--gray-light);
 
 	--color-base-card: var(--base-card);
@@ -41,6 +42,7 @@
 
 		--yellow-light: #f1e9c9;
 		--yellow-dark: #c47f17;
+		--yellow: #dbac2c;
 		--foreground: #000000;
 	}
 	h1 {
