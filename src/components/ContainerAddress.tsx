@@ -4,7 +4,6 @@ import FormAddress from "./FormAddress"
 function ContainerAddress() {
 	return (
 		<div>
-			<h3>Complete seu pedido</h3>
 			<div className="bg-base-card rounded-md p-10">
 				<div className="flex flex-col gap-6">
 					<div className="text-base-text flex gap-5">
