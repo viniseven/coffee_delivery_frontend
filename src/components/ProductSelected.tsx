@@ -7,7 +7,7 @@ import Separator from "./Separator"
 function ProductSelected() {
 	return (
 		<div>
-			<div className="mb-6 flex items-center gap-5">
+			<div className="mt-6 mb-6 flex items-center gap-5">
 				<img
 					src={Coffee}
 					alt="Imagem de uma xícara com café tradicional, visto de cima"
