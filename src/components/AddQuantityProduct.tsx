@@ -1,9 +1,9 @@
 import { ShoppingCart, Plus, Minus } from "lucide-react"
 import { Button } from "./ui/button"
 
-function AddCartControl() {
+function AddQuantityProduct() {
 	return (
-		<div className="flex flex-row gap-2">
+		<div className="flex max-w-24 flex-row gap-2">
 			<div className="bg-base-button flex items-center rounded-md">
 				<Button>
 					<Minus className="text-purple" />
@@ -13,11 +13,8 @@ function AddCartControl() {
 					<Plus className="text-purple" />
 				</Button>
 			</div>
-			<Button className="bg-purple-dark">
-				<ShoppingCart className="fill-white text-white" />
-			</Button>
 		</div>
 	)
 }
 
-export default AddCartControl
+export default AddQuantityProduct
