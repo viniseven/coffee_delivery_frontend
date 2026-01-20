@@ -5,7 +5,7 @@ import {
 	CardHeader,
 } from "@/components/ui/card"
 import Coffee from "../assets/Coffee.svg"
-import AddQuantityProduct from "./AddQuantityProduct"
+import QuantityProduct from "./QuantityProduct"
 import BuyButton from "./BuyButton"
 
 function ProductCard() {
@@ -29,7 +29,7 @@ function ProductCard() {
 					<p className="text-base">
 						R$<span className="ml-1 text-2xl font-bold">9,90</span>
 					</p>
-					<AddQuantityProduct />
+					<QuantityProduct />
 					<BuyButton />
 				</CardFooter>
 			</Card>
