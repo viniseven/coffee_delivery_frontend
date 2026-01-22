@@ -9,8 +9,17 @@ import QuantityProduct from "./QuantityProduct"
 import BuyButton from "./BuyButton"
 import CoffeeCardProps from "@/types/CoffeeProductProps"
 import LabelProduct from "./LabelProduct"
+import priceCentsConvert from "@/utils/priceCentsConverter"
+import { useContext } from "react"
+import { CartContext } from "@/contexts/CartContext"
 
 function ProductCard({ coffee }: CoffeeCardProps) {
+	const { addProductToCart } = useContext(CartContext)
+
+	function handleAddProductToCart() {
+		addProductToCart(coffee)
+	}
+
 	const price = (coffee.priceInCents / 100).toLocaleString("pt-BR", {
 		maximumFractionDigits: 2,
 		minimumFractionDigits: 2,
@@ -28,7 +37,7 @@ function ProductCard({ coffee }: CoffeeCardProps) {
 				/>
 				<div className="flex gap-1">
 					{coffee.label.map((dataLabel) => (
-						<LabelProduct key={coffee.id} label={dataLabel} />
+						<LabelProduct label={dataLabel} />
 					))}
 				</div>
 			</CardHeader>
@@ -41,10 +50,12 @@ function ProductCard({ coffee }: CoffeeCardProps) {
 			<CardFooter className="gap-3">
 				<p className="text-base">
 					R$
-					<span className="ml-1 text-2xl font-bold">{price}</span>
+					<span className="ml-1 text-2xl font-bold">
+						{priceCentsConvert(coffee.priceInCents)}
+					</span>
 				</p>
 				<QuantityProduct />
-				<BuyButton />
+				<BuyButton onClick={handleAddProductToCart} />
 			</CardFooter>
 		</Card>
 	)
