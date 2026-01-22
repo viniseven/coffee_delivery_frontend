@@ -1,5 +1,5 @@
-import Coffee from "../assets/Coffee.svg"
-import AddQuantityProduct from "./AddQuantityProduct"
+import Coffee from "../assets/CoffeeTradicional.svg"
+import AddQuantityProduct from "./QuantityProduct"
 import BuyButton from "./BuyButton"
 import RemoveProductButton from "./RemoveProductButton"
 import Separator from "./Separator"

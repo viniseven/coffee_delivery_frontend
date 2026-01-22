@@ -1,10 +1,11 @@
-interface Product {
-	id: String
-	name: String
-	description: String
-	category: String
+interface ProductTypes {
+	id: string
+	name: string
+	imgUrl: string
+	description: string
+	category: string
 	priceInCents: number
-	label: string
+	label: string[]
 }
 
-export default Product
+export default ProductTypes

@@ -8,11 +8,12 @@ import globals from "globals"
 export default defineConfig([
 	globalIgnores(["dist"]),
 	{
-		files: ["**/*.{js,jsx}"],
+		files: ["**/*.{js,jsx,tsx}"],
 		extends: [
 			js.configs.recommended,
 			reactHooks.configs.flat.recommended,
 			reactRefresh.configs.vite,
+			"prettier",
 		],
 		languageOptions: {
 			ecmaVersion: 2020,
