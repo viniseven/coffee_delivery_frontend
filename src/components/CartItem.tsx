@@ -1,4 +1,4 @@
-import Coffee from "../assets/Coffee.svg"
+import Coffee from "../assets/CoffeeTradicional.svg"
 import AddQuantityProduct from "./QuantityProduct"
 import BuyButton from "./BuyButton"
 import RemoveProductButton from "./RemoveProductButton"
