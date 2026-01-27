@@ -15,7 +15,7 @@ function ContainerCart() {
 			<div className="bg-base-card grid gap-9 rounded-md p-1 md:grid-cols-2 lg:p-10">
 				<div>
 					{products.map((product) => (
-						<CartItem key={product.id} coffee={product} />
+						<CartItem key={product.id} product={product} />
 					))}
 				</div>
 
