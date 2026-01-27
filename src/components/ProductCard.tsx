@@ -7,44 +7,57 @@ import {
 } from "@/components/ui/card"
 import QuantityProduct from "./QuantityProduct"
 import BuyButton from "./BuyButton"
-import CoffeeCardProps from "@/types/CoffeeProductProps"
+import ProductCardProps from "@/types/ProductCardProps"
 import LabelProduct from "./LabelProduct"
+import priceCentsConvert from "@/utils/priceCentsConverter"
+import { useContext, useState } from "react"
+import { CartContext } from "@/contexts/CartContext"
 
-function ProductCard({ coffee }: CoffeeCardProps) {
-	const price = (coffee.priceInCents / 100).toLocaleString("pt-BR", {
-		maximumFractionDigits: 2,
-		minimumFractionDigits: 2,
-		style: "decimal",
-		currency: "BRL",
-	})
+function ProductCard({ product }: ProductCardProps) {
+	const { addProductToCart } = useContext(CartContext)
+	const [quantity, setQuantity] = useState(1)
+
+	function handleAddProductToCart() {
+		addProductToCart(product, quantity)
+	}
 
 	return (
 		<Card className="bg-base-card flex w-3xs flex-col items-center rounded-tr-[36px] rounded-bl-[36px] border-none px-2 text-center">
 			<CardHeader className="flex flex-col items-center">
 				<img
-					src={coffee.imgUrl}
+					src={product.imgUrl}
 					alt="Imagem de uma xícara com café tradicional, visto de cima"
 					className="size-auto w-30"
 				/>
 				<div className="flex gap-1">
-					{coffee.label.map((dataLabel) => (
-						<LabelProduct key={coffee.id} label={dataLabel} />
+					{product.label.map((dataLabel) => (
+						<LabelProduct label={dataLabel} key={product.id} />
 					))}
 				</div>
 			</CardHeader>
 			<CardTitle>
-				<h3>{coffee.name}</h3>
+				<h3>{product.name}</h3>
 			</CardTitle>
 			<CardDescription className="mb-8">
-				<p className="text-gray-light mt-2">{coffee.description}</p>
+				<p className="text-gray-light mt-2">{product.description}</p>
 			</CardDescription>
 			<CardFooter className="gap-3">
 				<p className="text-base">
 					R$
-					<span className="ml-1 text-2xl font-bold">{price}</span>
+					<span className="ml-1 text-2xl font-bold">
+						{priceCentsConvert(product.priceInCents)}
+					</span>
 				</p>
-				<QuantityProduct />
-				<BuyButton />
+				<QuantityProduct
+					quantity={quantity}
+					handleAddQuantityProduct={() =>
+						setQuantity((prevState) => prevState + 1)
+					}
+					handleRemoveQuantityProduct={() =>
+						setQuantity((prevState) => (prevState > 1 ? prevState - 1 : 1))
+					}
+				/>
+				<BuyButton onClick={handleAddProductToCart} />
 			</CardFooter>
 		</Card>
 	)

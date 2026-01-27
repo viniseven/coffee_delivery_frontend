@@ -2,8 +2,12 @@ import { Link } from "react-router-dom"
 import Logo from "../assets/Logo.svg"
 import { Button } from "./ui/button"
 import { ShoppingCart, User } from "lucide-react"
+import { useContext } from "react"
+import { CartContext } from "@/contexts/CartContext"
 
 function Header() {
+	const { products } = useContext(CartContext)
+
 	return (
 		<div className="flex w-full justify-between py-8">
 			<Link to="/">
@@ -18,7 +22,7 @@ function Header() {
 				<Link to="/checkoutpayment" className="">
 					<Button className="bg-yellow-light relative">
 						<div className="bg-yellow-dark absolute bottom-5 left-9 flex h-5 w-5 items-center justify-center rounded-full p-0.5">
-							<span className="text-lg text-white">1</span>
+							<span className="text-lg text-white">{products.length}</span>
 						</div>
 						<ShoppingCart className="text-yellow-dark fill-yellow-dark" />
 					</Button>
