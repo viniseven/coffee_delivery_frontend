@@ -1,3 +1,4 @@
+//Interface padrão de produto
 interface ProductTypes {
 	id: string
 	name: string
