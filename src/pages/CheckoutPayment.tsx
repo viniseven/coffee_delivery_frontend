@@ -1,5 +1,5 @@
 import ContainerCheckout from "@/components/ContainerCheckout"
-import Header from "@/components/Header"
+import Header from "@/components/HeaderComponent"
 
 function CheckoutPayment() {
 	return (
