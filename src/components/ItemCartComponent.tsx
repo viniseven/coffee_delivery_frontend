@@ -1,5 +1,5 @@
 import QuantityProduct from "./QuantityProduct"
-import RemoveProductButton from "./RemoveProductButtonComponent"
+import RemoveProductButtonComponent from "./RemoveProductButtonComponent"
 import Separator from "./Separator"
 
 function ItemCartComponent() {
@@ -15,7 +15,7 @@ function ItemCartComponent() {
 					<p className="text-lg">""</p>
 					<div className="mt-2 flex flex-col gap-1 md:flex-row md:gap-4">
 						<QuantityProduct {}/>
-						<RemoveProductButton />
+						<RemoveProductButtonComponent />
 					</div>
 				</div>
 				<p className="font-bold lg:text-2xl">
