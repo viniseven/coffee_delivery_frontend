@@ -1,11 +1,10 @@
 import CartProduct from "@/types/CartProduct"
-import ProductTypes from "@/types/ProductTypes"
 import { createContext, ReactNode, useState } from "react"
 
 //Interface do meu contexto do carrinho. Recebendo no atributo products, a interface do meu cartProducts, tenho além dos atributos de produto, também quantidade
 interface ICartContext {
 	products: CartProduct[]
-	addProductToCart: (product: ProductTypes, quantity: number) => void
+	addProductToCart: (product: CartProduct, quantity: number) => void
 	removeProductCart: (productId: string) => void
 	addQuantityProductCart: (productId: string) => void
 	removeQuantityProductCart: (productId: string) => void
@@ -20,8 +19,15 @@ interface CartProviderProps {
 function CartContextProvider({ children }: CartProviderProps) {
 	const [products, setProducts] = useState<CartProduct[]>([])
 
-	function addProductToCart(product: ProductTypes, quantity: number) {
-		setProducts((prevState) => [...prevState, { ...product, quantity }])
+	console.log(products)
+
+	function addProductToCart(product: CartProduct, quantity: number) {
+		const newItem = {
+			...product,
+			quantity,
+		}
+
+		setProducts((prevState) => [...prevState, newItem])
 	}
 
 	function removeProductCart(productId: string) {
@@ -32,7 +38,10 @@ function CartContextProvider({ children }: CartProviderProps) {
 		setProducts((productsState) =>
 			productsState.map((productState) =>
 				productState.id == productId
-					? { ...productState, quantity: productState.quantity + 1 }
+					? {
+							...productState,
+							quantity: productState.quantity + 1,
+						}
 					: productState
 			)
 		)
