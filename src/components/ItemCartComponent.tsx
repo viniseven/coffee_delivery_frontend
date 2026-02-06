@@ -1,5 +1,5 @@
 import QuantityProduct from "./QuantityProduct"
-import RemoveProductButton from "./RemoveProductButton"
+import RemoveProductButton from "./RemoveProductButtonComponent"
 import Separator from "./Separator"
 
 function ItemCartComponent() {
