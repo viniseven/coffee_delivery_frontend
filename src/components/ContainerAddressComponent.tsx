@@ -1,7 +1,7 @@
 import { MapPin } from "lucide-react"
 import FormAddress from "./FormAddress"
 
-function ContainerAddress() {
+function ContainerAddressComponent() {
 	return (
 		<div>
 			<div className="bg-base-card rounded-md p-10">
@@ -22,4 +22,4 @@ function ContainerAddress() {
 	)
 }
 
-export default ContainerAddress
+export default ContainerAddressComponent
