@@ -1,5 +1,5 @@
 import ImageTitle from "../assets/ImgTitle.svg"
-import InfoItem from "./InfoItem"
+import BenefitListComponent from "./BenefitListComponent"
 import { BENEFITS } from "@/constants/benefits"
 
 function ContainerTitlePageComponent() {
@@ -13,7 +13,7 @@ function ContainerTitlePageComponent() {
 				</p>
 				<div className="grid gap-1 xl:mt-16 xl:grid-cols-2 xl:gap-x-5 xl:gap-y-10">
 					{BENEFITS.map((benefit) => (
-						<InfoItem
+						<BenefitListComponent
 							key={benefit.id}
 							icon={benefit.icon}
 							text={benefit.text}
