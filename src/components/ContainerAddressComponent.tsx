@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react"
-import FormAddress from "./FormAddress"
+import FormAddress from "./FormAddressComponent"
 
 function ContainerAddressComponent() {
 	return (
