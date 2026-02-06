@@ -1,5 +1,5 @@
-import Header from "@/components/Header"
-import ContainerTitle from "@/components/ContainerTitle"
+import Header from "@/components/HeaderComponent"
+import ContainerTitle from "@/components/ContainerTitlePageComponent"
 import SectionProducts from "@/components/SectionProducts"
 
 function Home() {
