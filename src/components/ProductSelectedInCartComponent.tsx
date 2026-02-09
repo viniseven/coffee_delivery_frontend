@@ -1,28 +1,26 @@
-import QuantityProduct from "./QuantityProduct"
-import RemoveProductButtonComponent from "./RemoveProductButtonComponent"
+import Coffee from "../assets/Coffee.svg"
+import AddQuantityProduct from "./AddQuantityProduct"
+import RemoveProductButton from "./RemoveProductButtonComponent"
 import Separator from "./SeparatorComponent"
 
-function ItemCartComponent() {
+function ProductSelectedInCart() {
 	return (
 		<div>
 			<div className="mt-6 mb-6 flex items-center gap-5">
 				<img
-					src=""
+					src={Coffee}
 					alt="Imagem de uma xícara com café tradicional, visto de cima"
 					className="size-auto w-20"
 				/>
 				<div className="grow">
-					<p className="text-lg">""</p>
+					<p className="text-lg">Expresso Tradicional</p>
 					<div className="mt-2 flex flex-col gap-1 md:flex-row md:gap-4">
-						<QuantityProduct {}/>
-						<RemoveProductButtonComponent />
+						<AddQuantityProduct />
+						<RemoveProductButton />
 					</div>
 				</div>
 				<p className="font-bold lg:text-2xl">
-					R${" "}
-					<span>
-						{}
-					</span>
+					R$ <span>9,90</span>
 				</p>
 			</div>
 			<Separator />
@@ -30,4 +28,4 @@ function ItemCartComponent() {
 	)
 }
 
-export default ItemCartComponent
+export default ProductSelectedInCart
