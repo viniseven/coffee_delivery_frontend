@@ -1,6 +1,6 @@
 import { map } from "zod"
 import CartItem from "./CartItem"
-import TotalPrice from "./TotalPrice"
+import TotalPrice from "./TotalPriceComponent"
 import { Button } from "./ui/button"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
