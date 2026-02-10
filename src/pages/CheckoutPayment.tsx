@@ -1,4 +1,4 @@
-import ContainerCheckout from "@/components/ContainerCheckout"
+import ContainerCheckout from "@/components/ContainerCheckoutComponent"
 import Header from "@/components/HeaderComponent"
 
 function CheckoutPayment() {
