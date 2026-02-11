@@ -9,12 +9,27 @@ import QuantityProduct from "./QuantitySelectorComponent"
 import BuyButton from "./BuyButtonComponent"
 import ProductTypes from "@/types/ProductTypes"
 import priceCentsConvert from "@/utils/priceCentsConverter"
+import { useState } from "react"
 
 interface ProductCardProps {
 	data: ProductTypes
 }
 
 function ProductCardComponent({ data }: ProductCardProps) {
+	const [quantityProduct, setQuantityProduct] = useState(1)
+
+	function handleIncrementQuantity() {
+		if (quantityProduct <= 19) {
+			setQuantityProduct(quantityProduct + 1)
+		}
+	}
+
+	function handleDecrementQuantity() {
+		if (quantityProduct > 1) {
+			setQuantityProduct(quantityProduct - 1)
+		}
+	}
+
 	return (
 		<Card className="bg-base-card flex w-3xs flex-col items-center rounded-tr-[36px] rounded-bl-[36px] border-none px-2 text-center">
 			<CardHeader className="flex flex-col items-center">
@@ -44,7 +59,11 @@ function ProductCardComponent({ data }: ProductCardProps) {
 						{priceCentsConvert(data.priceInCents)}
 					</span>
 				</p>
-				<QuantityProduct />
+				<QuantityProduct
+					addQuantityProduct={handleIncrementQuantity}
+					removeQuantityProduct={handleDecrementQuantity}
+					valueProduct={quantityProduct}
+				/>
 				<BuyButton />
 			</CardFooter>
 		</Card>
