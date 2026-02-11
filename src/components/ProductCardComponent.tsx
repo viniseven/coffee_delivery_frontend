@@ -8,6 +8,7 @@ import {
 import QuantityProduct from "./QuantitySelectorComponent"
 import BuyButton from "./BuyButtonComponent"
 import ProductTypes from "@/types/ProductTypes"
+import priceCentsConvert from "@/utils/priceCentsConverter"
 
 interface ProductCardProps {
 	data: ProductTypes
@@ -39,7 +40,9 @@ function ProductCardComponent({ data }: ProductCardProps) {
 			<CardFooter className="gap-3">
 				<p className="text-base">
 					R$
-					<span className="ml-1 text-2xl font-bold">{data.priceInCents}</span>
+					<span className="ml-1 text-2xl font-bold">
+						{priceCentsConvert(data.priceInCents)}
+					</span>
 				</p>
 				<QuantityProduct />
 				<BuyButton />
