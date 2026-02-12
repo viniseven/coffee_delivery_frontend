@@ -2,12 +2,12 @@ import CartProduct from "@/types/CartProduct"
 import { createContext, ReactNode, use, useState } from "react"
 
 interface ICartContext {
-	products: CartProduct[]
+	productsCart: CartProduct[]
 	addProductToCart: (product: CartProduct) => void
 }
 
 export const CartContext = createContext<ICartContext>({
-	products: [],
+	productsCart: [],
 	addProductToCart: () => {},
 })
 
@@ -16,9 +16,7 @@ interface IProps {
 }
 
 function CartContextProvider({ children }: IProps) {
-	const [products, setProducts] = useState<CartProduct[]>([])
-
-	console.log(products)
+	const [productsCart, setProducts] = useState<CartProduct[]>([])
 
 	function addProductToCart(product: CartProduct) {
 		const productCart: CartProduct = {
@@ -32,7 +30,7 @@ function CartContextProvider({ children }: IProps) {
 	}
 
 	return (
-		<CartContext.Provider value={{ products, addProductToCart }}>
+		<CartContext.Provider value={{ productsCart, addProductToCart }}>
 			{children}
 		</CartContext.Provider>
 	)

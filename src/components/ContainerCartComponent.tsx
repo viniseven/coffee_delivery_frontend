@@ -1,13 +1,20 @@
 import TotalPrice from "./TotalPriceComponent"
 import { Button } from "./ui/button"
 import { Link } from "react-router-dom"
+import ItemCartComponent from "./ItemCartComponent"
+import { useContext } from "react"
+import { CartContext } from "@/contexts/CartContext"
 
 function ContainerCartComponent() {
+	const { productsCart } = useContext(CartContext)
+
 	return (
 		<div className="w-full">
 			<h3>Cafés selecionados</h3>
 			<div className="bg-base-card grid gap-9 rounded-md p-1 md:grid-cols-2 lg:p-10">
-				<div></div>
+				<div>
+					<ItemCartComponent />
+				</div>
 
 				<div className="flex flex-col">
 					<TotalPrice />

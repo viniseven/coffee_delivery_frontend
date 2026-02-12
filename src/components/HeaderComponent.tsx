@@ -6,7 +6,7 @@ import { useContext } from "react"
 import { CartContext } from "@/contexts/CartContext"
 
 function HeaderComponent() {
-	const { products } = useContext(CartContext)
+	const { productsCart } = useContext(CartContext)
 
 	return (
 		<div className="flex w-full justify-between py-8">
@@ -23,7 +23,7 @@ function HeaderComponent() {
 					<Button className="bg-yellow-light relative">
 						<div className="bg-yellow-dark absolute bottom-5 left-9 flex h-4 w-4 items-center justify-center rounded-full p-0.5">
 							<span className="font-semibold text-white">
-								{products.length}
+								{productsCart.length}
 							</span>
 						</div>
 						<ShoppingCart className="text-yellow-dark fill-yellow-dark" />
