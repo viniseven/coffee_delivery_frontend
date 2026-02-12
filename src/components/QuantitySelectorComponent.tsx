@@ -1,6 +1,5 @@
 import { Plus, Minus } from "lucide-react"
 import { Button } from "./ui/button"
-import { useState } from "react"
 
 function QuantitySelectorComponent({
 	addQuantityProduct,
