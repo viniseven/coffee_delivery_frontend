@@ -1,16 +1,18 @@
-import CartProduct from "@/types/CartProduct"
-import { createContext, ReactNode, use, useState } from "react"
+import { CartProduct, CartProductWithTotal } from "@/types/CartProduct"
+import { createContext, ReactNode, useMemo, useState } from "react"
 
 interface ICartContext {
-	productsCart: CartProduct[]
+	productsCart: CartProductWithTotal[]
 	addProductToCart: (product: CartProduct) => void
 	removeProductToCart: (productId: string) => void
+	productCartTotalPrice: number
 }
 
 export const CartContext = createContext<ICartContext>({
 	productsCart: [],
 	addProductToCart: () => {},
 	removeProductToCart: () => {},
+	productCartTotalPrice: 0,
 })
 
 interface IProps {
@@ -39,9 +41,25 @@ function CartContextProvider({ children }: IProps) {
 		setProductsCart(remainingProducts)
 	}
 
+	const productCartTotalPrice = useMemo(() => {
+		return productsCart.map((product) => ({
+			...product,
+			totalPrice: product.priceInCents * product.quantity,
+		}))
+	}, [productsCart])
+
+	const totalGeneralPrice = useMemo(() => {
+		return productCartTotalPrice.reduce((acc, item) => acc + item.totalPrice, 0)
+	}, [productCartTotalPrice])
+
 	return (
 		<CartContext.Provider
-			value={{ productsCart, addProductToCart, removeProductToCart }}
+			value={{
+				productsCart: productCartTotalPrice,
+				addProductToCart,
+				removeProductToCart,
+				productCartTotalPrice: totalGeneralPrice,
+			}}
 		>
 			{children}
 		</CartContext.Provider>
