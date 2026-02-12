@@ -1,23 +1,33 @@
+import CartProduct from "@/types/CartProduct"
 import RemoveProductButtonComponent from "./RemoveProductButtonComponent"
 import Separator from "./SeparatorComponent"
+import priceCentsConvert from "@/utils/priceCentsConverter"
+import { CartContext } from "@/contexts/CartContext"
+import { useContext } from "react"
 
-function ItemCartComponent() {
+function ItemCartComponent({ product }: { product: CartProduct }) {
+	const { removeProductToCart } = useContext(CartContext)
+	console.log(product)
+
 	return (
 		<div>
 			<div className="mt-6 mb-6 flex items-center gap-5">
 				<img
-					src=""
+					src={product.imgUrl}
 					alt="Imagem de uma xícara com café tradicional, visto de cima"
 					className="size-auto w-20"
 				/>
 				<div className="grow">
-					<p className="text-lg">""</p>
+					<p className="text-lg">{product.name}</p>
 					<div className="mt-2 flex flex-col gap-1 md:flex-row md:gap-4">
-						<RemoveProductButtonComponent />
+						<RemoveProductButtonComponent
+							handleRemoveProduct={removeProductToCart}
+							productId={product.id}
+						/>
 					</div>
 				</div>
 				<p className="font-bold lg:text-2xl">
-					R$ <span>{}</span>
+					R$ <span>{priceCentsConvert(product.priceInCents)}</span>
 				</p>
 			</div>
 			<Separator />
