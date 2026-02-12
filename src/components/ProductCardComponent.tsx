@@ -5,17 +5,20 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card"
-import QuantityProduct from "./QuantitySelectorComponent"
+import QuantitySelectorComponent from "./QuantitySelectorComponent"
 import BuyButton from "./BuyButtonComponent"
 import ProductTypes from "@/types/ProductTypes"
 import priceCentsConvert from "@/utils/priceCentsConverter"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { CartContext } from "@/contexts/CartContext"
+import CartProduct from "@/types/CartProduct"
 
 interface ProductCardProps {
 	data: ProductTypes
 }
 
 function ProductCardComponent({ data }: ProductCardProps) {
+	const { addProductToCart } = useContext(CartContext)
 	const [quantityProduct, setQuantityProduct] = useState(1)
 
 	function handleIncrementQuantity() {
@@ -59,12 +62,15 @@ function ProductCardComponent({ data }: ProductCardProps) {
 						{priceCentsConvert(data.priceInCents)}
 					</span>
 				</p>
-				<QuantityProduct
+				<QuantitySelectorComponent
 					addQuantityProduct={handleIncrementQuantity}
 					removeQuantityProduct={handleDecrementQuantity}
 					valueProduct={quantityProduct}
 				/>
-				<BuyButton />
+				<BuyButton
+					handleBuyProduct={addProductToCart}
+					product={{ ...data, quantity: quantityProduct } as CartProduct}
+				/>
 			</CardFooter>
 		</Card>
 	)
