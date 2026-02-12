@@ -21,7 +21,14 @@ function CartContextProvider({ children }: IProps) {
 	console.log(products)
 
 	function addProductToCart(product: CartProduct) {
-		setProducts((prevState) => [...prevState, { ...product, quantity: 1 }])
+		const productCart: CartProduct = {
+			id: product.id,
+			name: product.name,
+			imgUrl: product.imgUrl,
+			priceInCents: product.priceInCents,
+			quantity: product.quantity,
+		}
+		setProducts((prevState) => [...prevState, productCart])
 	}
 
 	return (
