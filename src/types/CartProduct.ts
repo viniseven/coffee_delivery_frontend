@@ -1,5 +1,9 @@
 import Product from "./ProductTypes"
 
-type CartProduct = Pick<Product, "id" | "imgUrl" | "priceInCents">
+type CartType = Pick<Product, "id" | "imgUrl" | "priceInCents">
+
+interface CartProduct extends CartType {
+	quantity: number
+}
 
 export default CartProduct
