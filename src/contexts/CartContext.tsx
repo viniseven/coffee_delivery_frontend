@@ -4,11 +4,13 @@ import { createContext, ReactNode, use, useState } from "react"
 interface ICartContext {
 	productsCart: CartProduct[]
 	addProductToCart: (product: CartProduct) => void
+	removeProductToCart: (productId: string) => void
 }
 
 export const CartContext = createContext<ICartContext>({
 	productsCart: [],
 	addProductToCart: () => {},
+	removeProductToCart: () => {},
 })
 
 interface IProps {
@@ -16,7 +18,7 @@ interface IProps {
 }
 
 function CartContextProvider({ children }: IProps) {
-	const [productsCart, setProducts] = useState<CartProduct[]>([])
+	const [productsCart, setProductsCart] = useState<CartProduct[]>([])
 
 	function addProductToCart(product: CartProduct) {
 		const productCart: CartProduct = {
@@ -26,11 +28,21 @@ function CartContextProvider({ children }: IProps) {
 			priceInCents: product.priceInCents,
 			quantity: product.quantity,
 		}
-		setProducts((prevState) => [...prevState, productCart])
+		setProductsCart((prevState) => [...prevState, productCart])
+	}
+
+	function removeProductToCart(productId: string) {
+		const remainingProducts = productsCart.filter(
+			(product) => product.id != productId
+		)
+
+		setProductsCart(remainingProducts)
 	}
 
 	return (
-		<CartContext.Provider value={{ productsCart, addProductToCart }}>
+		<CartContext.Provider
+			value={{ productsCart, addProductToCart, removeProductToCart }}
+		>
 			{children}
 		</CartContext.Provider>
 	)
