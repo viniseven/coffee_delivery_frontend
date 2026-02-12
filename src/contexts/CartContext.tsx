@@ -3,10 +3,12 @@ import { createContext, ReactNode, use, useState } from "react"
 
 interface ICartContext {
 	products: CartProduct[]
+	addProductToCart: (product: CartProduct) => void
 }
 
-const CartContext = createContext<ICartContext>({
+export const CartContext = createContext<ICartContext>({
 	products: [],
+	addProductToCart: () => {},
 })
 
 interface IProps {
@@ -16,8 +18,16 @@ interface IProps {
 function CartContextProvider({ children }: IProps) {
 	const [products, setProducts] = useState<CartProduct[]>([])
 
+	console.log(products)
+
+	function addProductToCart(product: CartProduct) {
+		setProducts((prevState) => [...prevState, { ...product, quantity: 1 }])
+	}
+
 	return (
-		<CartContext.Provider value={{ products }}>{children}</CartContext.Provider>
+		<CartContext.Provider value={{ products, addProductToCart }}>
+			{children}
+		</CartContext.Provider>
 	)
 }
 export default CartContextProvider
