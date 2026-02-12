@@ -1,4 +1,4 @@
-import { ShoppingCart, Plus, Minus } from "lucide-react"
+import { Plus, Minus } from "lucide-react"
 import { Button } from "./ui/button"
 
 function AddQuantityProduct() {
