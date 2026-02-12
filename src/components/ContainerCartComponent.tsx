@@ -13,7 +13,9 @@ function ContainerCartComponent() {
 			<h3>Cafés selecionados</h3>
 			<div className="bg-base-card grid gap-9 rounded-md p-1 md:grid-cols-2 lg:p-10">
 				<div>
-					<ItemCartComponent />
+					{productsCart.map((data) => (
+						<ItemCartComponent product={data} />
+					))}
 				</div>
 
 				<div className="flex flex-col">
