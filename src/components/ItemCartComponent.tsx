@@ -1,13 +1,12 @@
-import CartProduct from "@/types/CartProduct"
+import { CartProductWithTotal } from "@/types/CartProduct"
 import RemoveProductButtonComponent from "./RemoveProductButtonComponent"
 import Separator from "./SeparatorComponent"
 import priceCentsConvert from "@/utils/priceCentsConverter"
 import { CartContext } from "@/contexts/CartContext"
 import { useContext } from "react"
 
-function ItemCartComponent({ product }: { product: CartProduct }) {
+function ItemCartComponent({ product }: { product: CartProductWithTotal }) {
 	const { removeProductToCart } = useContext(CartContext)
-	console.log(product)
 
 	return (
 		<div>
@@ -27,7 +26,7 @@ function ItemCartComponent({ product }: { product: CartProduct }) {
 					</div>
 				</div>
 				<p className="font-bold lg:text-2xl">
-					R$ <span>{priceCentsConvert(product.priceInCents)}</span>
+					R$ <span>{priceCentsConvert(product.totalPrice)}</span>
 				</p>
 			</div>
 			<Separator />
