@@ -14,7 +14,7 @@ function ItemCartComponent({ product }: { product: CartProductWithTotal }) {
 				<img
 					src={product.imgUrl}
 					alt="Imagem de uma xícara com café tradicional, visto de cima"
-					className="size-auto w-20"
+					className="size-auto w-15"
 				/>
 				<div className="grow">
 					<p className="text-lg">{product.name}</p>
@@ -25,7 +25,7 @@ function ItemCartComponent({ product }: { product: CartProductWithTotal }) {
 						/>
 					</div>
 				</div>
-				<p className="font-bold lg:text-2xl">
+				<p className="text-lg font-bold">
 					R$ <span>{priceCentsConvert(product.totalPrice)}</span>
 				</p>
 			</div>
