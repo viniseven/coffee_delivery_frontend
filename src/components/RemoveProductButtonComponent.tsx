@@ -14,7 +14,7 @@ function RemoveProductButtonComponent({
 }: RemoveButtonProps) {
 	return (
 		<Button
-			className="bg-base-button flex max-w-24 items-center rounded-md"
+			className="bg-base-button flex items-center rounded-md"
 			{...props}
 			onClick={() => handleRemoveProduct(productId)}
 		>
