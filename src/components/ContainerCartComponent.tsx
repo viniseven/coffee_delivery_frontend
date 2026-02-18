@@ -1,6 +1,4 @@
-import TotalPrice from "./TotalPriceComponent"
-import { Button } from "./ui/button"
-import { Link } from "react-router-dom"
+import { PackageSearch } from "lucide-react"
 import ItemCartComponent from "./ItemCartComponent"
 import { useContext } from "react"
 import { CartContext } from "@/contexts/CartContext"
@@ -9,22 +7,19 @@ function ContainerCartComponent() {
 	const { productsCart } = useContext(CartContext)
 
 	return (
-		<div className="w-full">
-			<h3>Cafés selecionados</h3>
-			<div className="bg-base-card grid gap-9 rounded-md p-1 md:grid-cols-2 lg:p-10">
+		<div className="bg-base-card w-full rounded-md p-10">
+			<div className="text-base-text flex gap-5">
+				<PackageSearch className="text-green" />
+				<div>
+					<p>Resumo do pedido</p>
+					<p className="text-sm">Produtos selecionados para compra</p>
+				</div>
+			</div>
+			<div className="grid gap-9 rounded-md md:grid-cols-2">
 				<div>
 					{productsCart.map((data) => (
 						<ItemCartComponent product={data} />
 					))}
-				</div>
-
-				<div className="flex flex-col">
-					<TotalPrice />
-					<Link to="/orderconfirmation">
-						<Button className="bg-yellow font-content w-full items-center p-3 font-bold text-white">
-							CONFIRMAR PEDIDO
-						</Button>
-					</Link>
 				</div>
 			</div>
 		</div>
