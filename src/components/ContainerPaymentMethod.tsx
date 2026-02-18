@@ -3,7 +3,7 @@ import { Button } from "./ui/button"
 
 function ContainerPaymentMethod() {
 	return (
-		<div className="bg-base-card font-content flex h-fit flex-col gap-5 rounded-md p-1">
+		<div className="bg-base-card font-content flex h-fit flex-col gap-5 rounded-md p-10">
 			<div className="text-base-text flex items-center gap-2">
 				<DollarSign className="text-purple" />
 				<div>
