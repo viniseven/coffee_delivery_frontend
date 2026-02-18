@@ -11,7 +11,7 @@ import ProductTypes from "@/types/ProductTypes"
 import priceCentsConvert from "@/utils/priceCentsConverter"
 import { useContext, useState } from "react"
 import { CartContext } from "@/contexts/CartContext"
-import CartProduct from "@/types/CartProduct"
+import { CartProduct } from "@/types/CartProduct"
 
 interface ProductCardProps {
 	data: ProductTypes
