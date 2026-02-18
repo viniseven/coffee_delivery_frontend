@@ -8,14 +8,12 @@ import { useContext } from "react"
 interface ItemCartProps {
 	product: CartProductWithTotal
 	showRemoveButton?: boolean
-	showQuantityProduct?: boolean
 	onRemove?: () => void
 }
 
 function ItemCartComponent({
 	product,
 	showRemoveButton,
-	showQuantityProduct,
 	onRemove,
 }: ItemCartProps) {
 	const { removeProductToCart } = useContext(CartContext)
