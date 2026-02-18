@@ -42,7 +42,7 @@ function HeaderComponent() {
 					<DropdownMenuContent className="bg-base-card px-2">
 						{productsCart.map((data) => (
 							<DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-								<ItemCartComponent product={data} />
+								<ItemCartComponent product={data} showRemoveButton />
 							</DropdownMenuItem>
 						))}
 						<TotalPrice />
