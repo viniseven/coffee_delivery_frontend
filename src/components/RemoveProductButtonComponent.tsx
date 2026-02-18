@@ -13,14 +13,16 @@ function RemoveProductButtonComponent({
 	...props
 }: RemoveButtonProps) {
 	return (
-		<Button
-			className="bg-base-button flex items-center rounded-md"
-			{...props}
-			onClick={() => handleRemoveProduct(productId)}
-		>
-			<Trash2 className="text-purple" />
-			<span className="text-base-text">REMOVER</span>
-		</Button>
+		<div>
+			<Button
+				{...props}
+				className="bg-base-button flex items-center rounded-md"
+				onClick={() => handleRemoveProduct(productId)}
+			>
+				<Trash2 className="text-purple" />
+				<span className="text-base-text">REMOVER</span>
+			</Button>
+		</div>
 	)
 }
 
