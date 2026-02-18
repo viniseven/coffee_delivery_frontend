@@ -1,7 +1,7 @@
 import { ShoppingCart } from "lucide-react"
 import { Button } from "./ui/button"
 import { ComponentProps } from "react"
-import CartProduct from "@/types/CartProduct"
+import { CartProduct } from "@/types/CartProduct"
 
 interface BuyButtonProps extends ComponentProps<typeof Button> {
 	product: CartProduct
