@@ -5,7 +5,17 @@ import priceCentsConvert from "@/utils/priceCentsConverter"
 import { CartContext } from "@/contexts/CartContext"
 import { useContext } from "react"
 
-function ItemCartComponent({ product }: { product: CartProductWithTotal }) {
+interface ItemCartProps {
+	product: CartProductWithTotal
+	showRemoveButton?: boolean
+	onRemove?: () => void
+}
+
+function ItemCartComponent({
+	product,
+	showRemoveButton,
+	onRemove,
+}: ItemCartProps) {
 	const { removeProductToCart } = useContext(CartContext)
 
 	return (
@@ -19,10 +29,12 @@ function ItemCartComponent({ product }: { product: CartProductWithTotal }) {
 				<div className="grow">
 					<p className="text-lg">{product.name}</p>
 					<div className="mt-2 flex flex-col gap-1 md:flex-row md:gap-4">
-						<RemoveProductButtonComponent
-							handleRemoveProduct={removeProductToCart}
-							productId={product.id}
-						/>
+						{showRemoveButton && (
+							<RemoveProductButtonComponent
+								handleRemoveProduct={removeProductToCart}
+								productId={product.id}
+							/>
+						)}
 					</div>
 				</div>
 				<p className="text-lg font-bold">
