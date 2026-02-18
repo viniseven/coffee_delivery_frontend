@@ -5,13 +5,11 @@ import ContainerPaymentMethod from "./ContainerPaymentMethod"
 function ContainerCheckoutComponent() {
 	return (
 		<div>
-			<h3>Complete seu pedido</h3>
-			<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+			<h2 className="mb-10">Confirme sua compra</h2>
+			<div className="flex max-w-3xl flex-col gap-3">
+				<ContainerCart />
 				<ContainerAddress />
 				<ContainerPaymentMethod />
-				<div className="md:col-span-2">
-					<ContainerCart />
-				</div>
 			</div>
 		</div>
 	)
