@@ -1,4 +1,4 @@
-import ContainerOrderConfirmation from "@/components/ContainerOrderConfirmation"
+import ContainerOrderConfirmation from "@/components/ContainerOrderConfirmationComponent"
 import Header from "@/components/HeaderComponent"
 
 function OrderConfirmation() {
